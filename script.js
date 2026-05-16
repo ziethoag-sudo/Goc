@@ -408,7 +408,7 @@ async function initSpotifyNowPlaying() {
     
     async function fetchNowPlaying() {
         try {
-            const response = await fetch('');
+            const response = await fetch('https://generator.ryuu.lol/api/spotify/now-playin');
             const data = await response.json();
             
             if (data.playing && data.track) {
@@ -492,4 +492,3 @@ async function initTopTracks() {
         });
     }
 }
-
