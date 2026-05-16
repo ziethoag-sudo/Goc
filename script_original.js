@@ -1,38 +1,14 @@
-const playlist = [
-    { src: 'music/10percs.mp3', title: '10 Percs', artist: 'Dave Blunts', art: 'music/10percs.jpg' },
-    { src: 'music/matthew.mp3', title: "Matthew's House", artist: 'Dave Blunts', art: 'music/matthew.jpg' },
-    { src: 'music/violentcrimes.mp3', title: 'Violent Crimes', artist: 'Kanye West', art: 'music/violentcrimes.jpg' },
-    { src: 'music/bigger.mp3', title: 'Bigger', artist: 'Dave Blunts', art: 'music/bigger.jpg' },
-    { src: 'music/carnival.mp3', title: 'CARNIVAL', artist: '¥$, Kanye West, Ty Dolla $ign', art: 'music/carnival.jpg' },
-    { src: 'music/truelove.mp3', title: 'True Love', artist: 'Kanye West, XXXTENTACION', art: 'music/truelove.jpg' },
-    { src: 'music/cryinginthekitchen.mp3', title: 'CRYING IN THE KITCHEN', artist: 'Dave Blunts', art: 'music/cryinginthekitchen.jpg' },
-    { src: 'music/jaydes.mp3', title: 'jaydes', artist: 'boolymon', art: 'music/jaydes.jpg' },
-    { src: 'music/wendigo.mp3', title: 'Wendigo', artist: 'Semetary', art: 'music/wendigo.jpg' },
-    { src: 'music/sexcrimes.mp3', title: 'Sex Crimes', artist: 'Dave Blunts', art: 'music/sexcrimes.jpg' },
-    { src: 'music/homecoming.mp3', title: 'Homecoming', artist: 'Kanye West', art: 'music/homecoming.jpg' },
-    { src: 'music/27.mp3', title: '27', artist: 'jaydes, Riovaz', art: 'music/27.jpg' },
-    { src: 'music/vices.mp3', title: 'VICES', artist: 'The Missing Peace, Dave Blunts', art: 'music/vices.jpg' },
-    { src: 'music/homerun.mp3', title: 'Home Run (feat. Dave Blunts)', artist: 'BabyTron, Dave Blunts', art: 'music/homerun.jpg' },
-    { src: 'music/airmattress.mp3', title: 'Air Mattress', artist: 'Dave Blunts', art: 'music/airmattress.jpg' },
-    { src: 'music/bodyhigh.mp3', title: 'BodyHigh', artist: '6cd, jaydes', art: 'music/bodyhigh.jpg' },
-    { src: 'music/sedated.mp3', title: 'sedated', artist: 'jaydes', art: 'music/sedated.jpg' },
-    { src: 'music/lean.mp3', title: 'I <3 Lean', artist: 'ItsCharlie, Dave Blunts', art: 'music/lean.jpg' },
-    { src: 'music/stan.mp3', title: 'stan', artist: 'jaydes', art: 'music/stan.jpg' },
-    { src: 'music/thegirlinthecloset.mp3', title: 'The girl in the closet', artist: 'Dave Blunts', art: 'music/thegirlinthecloset.jpg' },
-    { src: 'music/bound2.mp3', title: 'Bound 2', artist: 'Kanye West', art: 'music/bound2.jpg' },
-    { src: 'music/toybarn.mp3', title: 'TOY BARN', artist: 'Semetary', art: 'music/toybarn.jpg' },
-    { src: 'music/blowme.mp3', title: 'Blow Me', artist: 'fakemink', art: 'music/blowme.jpg' },
-    { src: 'music/maryson2nd.mp3', title: 'Mary’s On 2nd', artist: 'Dave Blunts', art: 'music/maryson2nd.jpg' },
-    { src: 'music/south.mp3', title: 'South', artist: 'jaydes', art: 'music/south.jpg' },
-    { src: 'music/solarsunsuccessfulattempttoreturn.mp3', title: "Solar's Unsuccessful Attempt To Return", artist: 'Dave Blunts', art: 'music/solarsunsuccessfulattempttoreturn.jpg' },
-    { src: 'music/lowlife.mp3', title: 'lowlife', artist: 'jaydes', art: 'music/lowlife.jpg' },
-    { src: 'music/balcony.mp3', title: 'Balcony', artist: 'Dave Blunts', art: 'music/balcony.jpg' },
-    { src: 'music/themoreyouknow.mp3', title: 'the more you know', artist: 'jaydes', art: 'music/themoreyouknow.jpg' },
-    { src: 'music/backinthedmv.mp3', title: 'Back In The DMV', artist: 'Dave Blunts', art: 'music/backinthedmv.jpg' },
-    { src: 'music/parasocial.mp3', title: 'parasocial', artist: 'jaydes', art: 'music/parasocial.jpg' },
-    { src: 'music/firstdayoutthehospital.mp3', title: 'First Day Out The Hospital', artist: 'Dave Blunts', art: 'music/firstdayoutthehospital.jpg' },
-    { src: 'music/tiredofbeinggroomed.mp3', title: 'tired of being groomed', artist: 'Dave Blunts', art: 'music/tiredofbeinggroomed.jpg' },
-    { src: 'music/perfectworld.mp3', title: 'Perfect World', artist: 'Dave Blunts', art: 'music/perfectworld.jpg' },
+const playlist = [    
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504519234871361677/bounce_i_just_wanna_dance_S2DLrhb-078.mp3?ex=6a07483a&is=6a05f6ba&hm=f2d47007c4e1c771494de969ce1d880131a18e08d1d23c861bb369ee9fa7b140&', title: 'bounce (i just wanna dance)', artist: 'фрози', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504519254656155828/F8js0U0T9ZVvMNWagDCtaNtMbDdUlGS5L1-1CsANneQzMIgVfvyxKNGrCHjJz85nKcbTBBb-9DsMEcS2w544-h544-l90-rj.png?ex=6a07483e&is=6a05f6be&hm=b17b0674297976235ec7902574ffd821998a9f57b68edeb3bd950d7810a3112e&' },
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504309791504203806/Stephen_Sanchez_Em_Beihold_-_Until_I_Found_You_Em_Beihold_Version.mp3?ex=6a06852b&is=6a0533ab&hm=3be437a0aa310f63db36a6de5c544660b057700b1dcd6b52677d565aa60355c4&', title: "Until I Found You (Em Beihold Version)", artist: 'Stephen Sanchez · Em Beihold', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504309794440482878/1650603861343_300.png?ex=6a06852b&is=6a0533ab&hm=3c6ccfcb12d02dade40872517dbcdae60c97701f816388704aa99e75e7d2347b&' },
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504521741639221289/SUMMER_j1DnOm0DdQU.mp3?ex=6a074a8f&is=6a05f90f&hm=38f04b6305acadcc4dbdeca17fc8d2eb8615d7a523eac63e6fb1f7ab82f9bc4f&', title: 'おつかれSUMMER', artist: 'Tomoyuki Tanaka Masayuki Kumahara · Tomoyuki Tanaka', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504521765706010675/tAh0b3-dx80iA1gGjvEij78w0xwsVl23-VpftL4lP3ZXghub-GgZkr3OW4Q_d3X792Sxv11o7imPb9asw544-h544-s-l90-rj.png?ex=6a074a95&is=6a05f915&hm=c731816fa7be49982ec1d98cb6126212104d8a18e55a825d092e880430119040&' },
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504522493258498179/Zachz_Winner_springs__maxwell4k_-_discopled.mp3?ex=6a074b43&is=6a05f9c3&hm=0473b6bdc3cc05afe777cc3d6bac79980d12fdbd8eb97038237f984b36f0027c&', title: 'discopled', artist: 'Zachz Winner', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504522519275769927/t-N-VlxYpmtQKp1lCFG0503CdItYlx8mFgUdJHX2VuWYCMqyyRqgnm2t6ZJKXtRkI11UxICMP-EgmnEMw544-h544-l90-rj.png?ex=6a074b49&is=6a05f9c9&hm=36959b517e7c15133b705721c331832ee7d4d28e252a3a27dc2edaa8404097d9&' },
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504305560269623366/OneOfTheGirl.mp3.mp3?ex=6a0729fa&is=6a05d87a&hm=03101d475b30ddf5cc01704e25a1b94794dbd5045082300ad306c019383bd008&', title: 'One Of The Girl', artist: 'The Weekend', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504309162643951747/loi-dich-one-of-the-girls-the-idol-the-weeknd-jennie-lily-rose-depp-2.png?ex=6a072d55&is=6a05dbd5&hm=819ddc24c3c9222bbbbc7acf8ce2ff0f9a5a2f25711dcb030031091db909eb10&' },
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504523363845017731/Feels_fqqcXP1D0Fw.mp3?ex=6a074c12&is=6a05fa92&hm=eb3df95319925e898284cb6676b514c355412ef9f70cca3ccebfb159f32f9658&', title: 'Feels', artist: 'Calvin Harris · Pharrell Williams · Katy Perry · Big Sean', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504523382366933114/VHdOBJElHdTf7hsG9c3jlmG68hB_z-jB0KR-lhCQET0ksmn70QWKo_emVsxsxd1oFMTZVEpdWgSq_cMw544-h544-l90-rj.png?ex=6a074c17&is=6a05fa97&hm=59443ea1811f368b409c338c89a5d76f9e434f944900e603a48391ae1cf22e0d&' },
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504523785796325486/HYBS_-_Tip_Toe_Official_Video.mp3?ex=6a074c77&is=6a05faf7&hm=5bba6002d9721dd58fa5589d453ba8252df679eb2afc2f425083d8c5ada27355&', title: 'Tip Toe', artist: 'HYBS', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504523782021320774/maxresdefault.png?ex=6a074c76&is=6a05faf6&hm=4c4fbf15f09791e2828ef18dab9369e8c9a9c3486482e4bcc3818cd500793952&' },
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504524689630826628/We_Dont_Talk_Anymore_feat._Selena_Gomez_ffqliB42Nh4.mp3?ex=6a074d4e&is=6a05fbce&hm=de006a17f7c28eed7631e24dd4bb5f771f557bfb3c5f3d7e025843a2f7917f7b&', title: 'We Dont Talk Anymore', artist: 'Charlie Puth · Selena Gomez', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504524708576497915/TlXKDSRGrj0ogqmGbzyGvZrsT9T0F6xgV-2-3pelbzRms0cODdb-ndDg6SpFzkHYMb4NMMMW957wmrObfww544-h544-l90-rj.png?ex=6a074d53&is=6a05fbd3&hm=bbc866bd797f4bde35d2972095c190ee83247db7e27b77fc1fda788a4f713a55&' },
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504525136278061056/Eve_-_Underdog.mp3?ex=6a074db9&is=6a05fc39&hm=58defb7e897dec982162d8ecfe4d347367eef0e0efe4f5a94fbe57defda11552&', title: 'Underdog', artist: 'Eve', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504525146806030356/3HmCRBEzEHhEOO_H53X6rg2uBeVmAzitQ-b4oNi-xzqB3s2BIlUSCohbNgvvhTMG6fXWiRg2TmmxZ_Iw544-h544-l90-rj.png?ex=6a074dbb&is=6a05fc3b&hm=48746c4540e9ffe05c3bf6ed63fb1343dcdd184512f871b09d1fcaec16f68025&' },
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504525447071793152/LOVELI_LORI_ovg_-_Love_For_You.mp3?ex=6a074e03&is=6a05fc83&hm=5409e3eb35ddf5671163a71b0fce359c7c06d5e476f829c486ccdecb88e46727&', title: 'Love For You', artist: 'ovg!', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504525460112019567/9GFOIsA2-l8U59GsTsyAfG0ZorAM1fk-hDEGnfvPrAQOnACJLyj0KYIzt2y3rJxqU-poCW00VsamVR35w544-h544-l90-rj.png?ex=6a074e06&is=6a05fc86&hm=2973ffd367ab68e672592b323a59771012e6774ae1cdfe3a375c85e2af74ccdf&' },
 ];
 
 let hasEntered = false;
@@ -92,6 +68,20 @@ function initIntroScreen() {
     let recentlyPlayed = [];
     const maxRecentlyPlayed = 7;
     
+    // Audio error handling
+    bgMusic.addEventListener('error', (e) => {
+        console.error('Audio load error:', e);
+        console.error('Error code:', bgMusic.error?.code);
+    });
+    
+    bgMusic.addEventListener('play', () => {
+        console.log('Audio playback started');
+    });
+    
+    bgMusic.addEventListener('pause', () => {
+        console.log('Audio paused');
+    });
+    
     function formatTimeSeconds(seconds) {
         const mins = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
@@ -115,6 +105,7 @@ function initIntroScreen() {
     }
     
     function playSong(index, isRandom = false) {
+        console.log('playSong called with index:', index);
         if (isRandom) {
             let randomIndex;
             let attempts = 0;
@@ -151,15 +142,22 @@ function initIntroScreen() {
         }
         
         const song = playlist[currentSongIndex];
+        console.log('Playing song:', song.title, 'URL:', song.src);
         bgMusic.src = song.src;
         bgMusic.volume = volumeSlider.value / 100;
-        bgMusic.play();
+        bgMusic.play().then(() => {
+            console.log('Audio play succeeded');
+            updateDiscordPresence(true);
+        }).catch(error => {
+            console.error('Playback error:', error);
+            updateDiscordPresence(true);
+        });
         updateSongUI(song);
         playIcon.style.display = 'none';
         pauseIcon.style.display = 'block';
         bgMusicIndicator.style.display = 'flex';
     }
-    
+
     function seekTo(e) {
         if (!bgMusic.duration || isNaN(bgMusic.duration)) return;
         const rect = bgProgressBar.getBoundingClientRect();
@@ -174,13 +172,15 @@ function initIntroScreen() {
     }
     
     introScreen.addEventListener('click', () => {
+        console.log('Intro screen clicked!');
         if (hasEntered) return;
         hasEntered = true;
         
         introScreen.classList.add('hidden');
         mainContent.classList.add('visible');
         
-        playSong(0, true);
+        console.log('Calling playSong(0, false)');
+        playSong(0, false);
         
         setTimeout(() => {
             initParticles();
@@ -192,15 +192,19 @@ function initIntroScreen() {
     
     bgMusicToggle.addEventListener('click', () => {
         if (bgMusic.paused) {
-            bgMusic.play();
+            bgMusic.play().catch(error => {
+                console.error('Playback error:', error);
+            });
             playIcon.style.display = 'none';
             pauseIcon.style.display = 'block';
             bgMusicIndicator.style.display = 'flex';
+            updateDiscordPresence(true);
         } else {
             bgMusic.pause();
             playIcon.style.display = 'block';
             pauseIcon.style.display = 'none';
             bgMusicIndicator.style.display = 'none';
+            updateDiscordPresence(false);
         }
     });
     
@@ -215,7 +219,9 @@ function initIntroScreen() {
                 const song = playlist[currentSongIndex];
                 bgMusic.src = song.src;
                 bgMusic.volume = volumeSlider.value / 100;
-                bgMusic.play();
+                bgMusic.play().catch(error => {
+                    console.error('Playback error:', error);
+                });
                 updateSongUI(song);
                 playIcon.style.display = 'none';
                 pauseIcon.style.display = 'block';
@@ -227,7 +233,7 @@ function initIntroScreen() {
     });
     
     nextBtn.addEventListener('click', () => {
-        playSong(0, true);
+        playSong(currentSongIndex + 1, false);
     });
     
     bgProgressBar.addEventListener('click', seekTo);
@@ -249,9 +255,18 @@ function initIntroScreen() {
     
     bgMusic.addEventListener('timeupdate', updateProgress);
     bgMusic.addEventListener('loadedmetadata', updateProgress);
+
+    bgMusic.addEventListener('error', () => {
+        if (!bgMusic.src.includes('soundhelix.com')) {
+            bgMusic.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
+            bgMusic.play().catch(() => {
+                // playback blocked or fallback failed
+            });
+        }
+    });
     
     bgMusic.addEventListener('ended', () => {
-        playSong(0, true);
+        playSong(currentSongIndex + 1, false);
     });
     
     volumeSlider.addEventListener('input', (e) => {
@@ -397,7 +412,7 @@ async function initSpotifyNowPlaying() {
     
     async function fetchNowPlaying() {
         try {
-            const response = await fetch('https://generator.ryuu.lol/api/spotify/now-playing');
+            const response = await fetch('');
             const data = await response.json();
             
             if (data.playing && data.track) {
@@ -439,7 +454,7 @@ async function initTopTracks() {
     const skeletons = ['skeleton1', 'skeleton2', 'skeleton3', 'skeleton4', 'skeleton5'];
     
     try {
-        const response = await fetch('https://generator.ryuu.lol/api/spotify/top-tracks');
+        const response = await fetch('https://generator.ryuu.lol/api/spotify/top-track');
         const data = await response.json();
         
         if (data.tracks && data.tracks.length > 0) {
@@ -480,4 +495,14 @@ async function initTopTracks() {
             if (skeleton) skeleton.classList.add('hidden');
         });
     }
+}
+
+function updateDiscordPresence(isPlaying) {
+    const statusText = document.getElementById('discordStatusText');
+    if (!statusText) return;
+
+    const currentTitle = document.getElementById('bgMusicTitle')?.textContent || 'Spotify';
+    statusText.textContent = isPlaying
+        ? `Đang xem YouTube + Game Activate + Spotify: ${currentTitle}`
+        : 'Đang xem YouTube + Game Activate + Spotify';
 }
