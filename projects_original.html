@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Projects - @ryuulol</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    
+    <canvas id="particles"></canvas>
+    
+    <main class="container">
+        <div class="projects-header">
+            <a href="index.html" class="back-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                <span>back</span>
+            </a>
+            <h1 class="projects-title">
+                <span class="at">@</span>projects
+            </h1>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://generator.ryuu.lol/files/toolv2image.png" alt="Manifest Tool V2">
+                    <div class="project-overlay">
+                        <a href="https://generator.ryuu.lol/tool" class="project-link" target="_blank">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-name">Manifest Tool V2</h3>
+                    <p class="project-description">A powerful tool for generating and managing steam manifests with a modern interface.</p>
+                    <div class="project-tags">
+                        <span class="tag">Rust</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Tauri</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://ryuu.lol/media/randomstatuschangerproject.png" alt="Random Discord Status Changer">
+                    <div class="project-overlay">
+                        <a href="https://ryuu.lol/files/RandomDiscordStatusChanger.rar" class="project-link" target="_blank" download>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-name">Random Discord Status Changer</h3>
+                    <p class="project-description">A tool that randomly changes your Discord status from a predefined list of statuses.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://ryuu.lol/media/statuschangerproject.png" alt="Rotating Discord Status Changer">
+                    <div class="project-overlay">
+                        <a href="https://ryuu.lol/files/RotatingDiscordStatusChanger.rar" class="project-link" target="_blank" download>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-name">Rotating Discord Status Changer</h3>
+                    <p class="project-description">A tool that rotates your Discord status from a predefined list of statuses in order.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initParticles();
+            initCursorGlow();
+            preventZoom();
+        });
+    </script>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "12ebf3a7cd6e4ebeba7c0295edb9c58b"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>

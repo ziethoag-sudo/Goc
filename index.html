@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>@Gok</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="intro-screen" id="introScreen">
+        <div class="intro-content">
+            <div class="intro-text">nhấn vào đi :333</div>
+            <div class="intro-hint">♪ Nhạc sẽ tự mở :DD</div>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="noise"></div>
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        
+        <canvas id="particles"></canvas>
+        
+        <main class="container">
+            <div class="profile-card">
+                <div class="avatar-wrapper">
+                    <div class="avatar-glow"></div>
+                    <img src="https://cdn.discordapp.com/attachments/1415992416414203930/1504297696716918864/3edd25d5481b18bf4721bc03debc85f1.gif?ex=6a0679e7&is=6a052867&hm=a96dc579312e5f6c5b5ab05a07fdf479df9906a1f51eec47cac3d01cd3855f69&" alt="Avatar" class="avatar">
+                    <div class="status-indicator"></div>
+                </div>
+                
+                <div class="profile-info">
+                    <h1 class="username">
+                        Gok
+                    </h1>
+                    <p class="bio">Goc is my life</p>
+                </div>
+
+                <div class="bio-links">
+                    <a href="https://github.com" class="bio-link" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.roblox.com/users/622589593/profile" class="bio-link" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 1552 1552" fill="currentColor">
+                            <path d="m328 0l-328 1224 1224 328 328-1224zm573.3 992.9l-342.1-91.7 91.7-342 342.2 91.7z"/>
+                        </svg>
+                        <span>Roblox</span>
+                    </a>
+                    <a href="https://www.facebook.com/ziet.hoag" class="bio-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        <span>Facebook</span>
+                    </a>
+                </div>
+
+                <div class="now-playing-section" id="nowPlaying" style="display: none;">
+                    <div class="now-playing-header">
+                        <div class="listening-indicator">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                        <span>listening to spotify</span>
+                    </div>
+                    <div class="now-playig-content">
+                        <div class="now-playing-art">
+                            <img id="albumArt" src="" alt="Album Art">
+                        </div>
+                        <div class="now-playing-info">
+                            <a href="#" id="trackLink" target="_blank" class="now-playing-track"></a>
+                            <div class="now-playing-artist" id="artistName"></div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                </div>
+                                <div class="progress-time">
+                                    <span id="currentTime">0:00</span>
+                                    <span id="totalTime">0:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-music-section" id="bgMusicPlayer">
+                <div class="bg-music-header">
+                    <div class="bg-music-indicator">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <span>now playing</span>
+                </div>
+                <div class="bg-music-content">
+                    <div class="bg-music-art">
+                        <img id="bgMusicArt" src="" alt="Album Art">
+                    </div>
+                    <div class="bg-music-details">
+                        <div class="bg-music-title" id="bgMusicTitle">—</div>
+                        <div class="bg-music-artist" id="bgMusicArtist">—</div>
+                    </div>
+                </div>
+                <div class="bg-progress-container">
+                    <span class="bg-progress-time" id="bgCurrentTime">0:00</span>
+                    <div class="bg-progress-bar" id="bgProgressBar">
+                        <div class="bg-progress-fill" id="bgProgressFill"></div>
+                        <div class="bg-progress-thumb" id="bgProgressThumb"></div>
+                    </div>
+                    <span class="bg-progress-time" id="bgTotalTime">0:00</span>
+                </div>
+                <div class="bg-music-controls">
+                    <div class="volume-control">
+                        <button class="volume-btn" id="volumeBtn" title="Mute">
+                        <svg class="volume-high" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                        </svg>
+                        <svg class="volume-muted" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                            <path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>
+                        </svg>
+                        </button>
+                        <div class="volume-slider-wrap">
+                            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="20">
+                        </div>
+                    </div>
+                    <button class="control-btn" id="prevBtn" title="Previous">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                        </svg>
+                    </button>
+                    <button class="control-btn play-pause-btn" id="bgMusicToggle" title="Play/Pause">
+                        <svg class="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                        <svg class="pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                            <rect x="6" y="4" width="4" height="16"/>
+                            <rect x="14" y="4" width="4" height="16"/>
+                        </svg>
+                    </button>
+                    <button class="control-btn" id="nextBtn" title="Next">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="spotify-section">
+                <div class="section-header">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DB954">
+                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                    </svg>
+                    <span>top tracks</span>
+                </div>
+                <div class="spotify-tracks" id="spotifyTracks">
+                    <div class="skeleton-track" id="skeleton1"></div>
+                    <div class="skeleton-track" id="skeleton2"></div>
+                    <div class="skeleton-track" id="skeleton3"></div>
+                    <div class="skeleton-track" id="skeleton4"></div>
+                    <div class="skeleton-track" id="skeleton5"></div>
+                </div>
+            </div>
+        </main>
+
+        <div class="cursor-glow" id="cursorGlow"></div>
+    </div>
+
+    <audio id="bgMusic"></audio>
+
+    <script src="script.js"></script>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "12ebf3a7cd6e4ebeba7c0295edb9c58b"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>
