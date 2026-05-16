@@ -1,5 +1,5 @@
-const playlist = [
-     { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504519234871361677/bounce_i_just_wanna_dance_S2DLrhb-078.mp3?ex=6a07483a&is=6a05f6ba&hm=f2d47007c4e1c771494de969ce1d880131a18e08d1d23c861bb369ee9fa7b140&', title: 'bounce (i just wanna dance)', artist: 'фрози', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504519254656155828/F8js0U0T9ZVvMNWagDCtaNtMbDdUlGS5L1-1CsANneQzMIgVfvyxKNGrCHjJz85nKcbTBBb-9DsMEcS2w544-h544-l90-rj.png?ex=6a07483e&is=6a05f6be&hm=b17b0674297976235ec7902574ffd821998a9f57b68edeb3bd950d7810a3112e&' },
+const playlist = [    
+    { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504519234871361677/bounce_i_just_wanna_dance_S2DLrhb-078.mp3?ex=6a07483a&is=6a05f6ba&hm=f2d47007c4e1c771494de969ce1d880131a18e08d1d23c861bb369ee9fa7b140&', title: 'bounce (i just wanna dance)', artist: 'фрози', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504519254656155828/F8js0U0T9ZVvMNWagDCtaNtMbDdUlGS5L1-1CsANneQzMIgVfvyxKNGrCHjJz85nKcbTBBb-9DsMEcS2w544-h544-l90-rj.png?ex=6a07483e&is=6a05f6be&hm=b17b0674297976235ec7902574ffd821998a9f57b68edeb3bd950d7810a3112e&' },
     { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504309791504203806/Stephen_Sanchez_Em_Beihold_-_Until_I_Found_You_Em_Beihold_Version.mp3?ex=6a06852b&is=6a0533ab&hm=3be437a0aa310f63db36a6de5c544660b057700b1dcd6b52677d565aa60355c4&', title: "Until I Found You (Em Beihold Version)", artist: 'Stephen Sanchez · Em Beihold', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504309794440482878/1650603861343_300.png?ex=6a06852b&is=6a0533ab&hm=3c6ccfcb12d02dade40872517dbcdae60c97701f816388704aa99e75e7d2347b&' },
     { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504521741639221289/SUMMER_j1DnOm0DdQU.mp3?ex=6a074a8f&is=6a05f90f&hm=38f04b6305acadcc4dbdeca17fc8d2eb8615d7a523eac63e6fb1f7ab82f9bc4f&', title: 'おつかれSUMMER', artist: 'Tomoyuki Tanaka Masayuki Kumahara · Tomoyuki Tanaka', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504521765706010675/tAh0b3-dx80iA1gGjvEij78w0xwsVl23-VpftL4lP3ZXghub-GgZkr3OW4Q_d3X792Sxv11o7imPb9asw544-h544-s-l90-rj.png?ex=6a074a95&is=6a05f915&hm=c731816fa7be49982ec1d98cb6126212104d8a18e55a825d092e880430119040&' },
     { src: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504522493258498179/Zachz_Winner_springs__maxwell4k_-_discopled.mp3?ex=6a074b43&is=6a05f9c3&hm=0473b6bdc3cc05afe777cc3d6bac79980d12fdbd8eb97038237f984b36f0027c&', title: 'discopled', artist: 'Zachz Winner', art: 'https://cdn.discordapp.com/attachments/1415992416414203930/1504522519275769927/t-N-VlxYpmtQKp1lCFG0503CdItYlx8mFgUdJHX2VuWYCMqyyRqgnm2t6ZJKXtRkI11UxICMP-EgmnEMw544-h544-l90-rj.png?ex=6a074b49&is=6a05f9c9&hm=36959b517e7c15133b705721c331832ee7d4d28e252a3a27dc2edaa8404097d9&' },
@@ -68,6 +68,20 @@ function initIntroScreen() {
     let recentlyPlayed = [];
     const maxRecentlyPlayed = 7;
     
+    // Audio error handling
+    bgMusic.addEventListener('error', (e) => {
+        console.error('Audio load error:', e);
+        console.error('Error code:', bgMusic.error?.code);
+    });
+    
+    bgMusic.addEventListener('play', () => {
+        console.log('Audio playback started');
+    });
+    
+    bgMusic.addEventListener('pause', () => {
+        console.log('Audio paused');
+    });
+    
     function formatTimeSeconds(seconds) {
         const mins = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
@@ -91,6 +105,7 @@ function initIntroScreen() {
     }
     
     function playSong(index, isRandom = false) {
+        console.log('playSong called with index:', index);
         if (isRandom) {
             let randomIndex;
             let attempts = 0;
@@ -127,15 +142,22 @@ function initIntroScreen() {
         }
         
         const song = playlist[currentSongIndex];
+        console.log('Playing song:', song.title, 'URL:', song.src);
         bgMusic.src = song.src;
         bgMusic.volume = volumeSlider.value / 100;
-        bgMusic.play();
+        bgMusic.play().then(() => {
+            console.log('Audio play succeeded');
+            updateDiscordPresence(true);
+        }).catch(error => {
+            console.error('Playback error:', error);
+            updateDiscordPresence(true);
+        });
         updateSongUI(song);
         playIcon.style.display = 'none';
         pauseIcon.style.display = 'block';
         bgMusicIndicator.style.display = 'flex';
     }
-    
+
     function seekTo(e) {
         if (!bgMusic.duration || isNaN(bgMusic.duration)) return;
         const rect = bgProgressBar.getBoundingClientRect();
@@ -150,13 +172,15 @@ function initIntroScreen() {
     }
     
     introScreen.addEventListener('click', () => {
+        console.log('Intro screen clicked!');
         if (hasEntered) return;
         hasEntered = true;
         
         introScreen.classList.add('hidden');
         mainContent.classList.add('visible');
         
-        playSong(0, true);
+        console.log('Calling playSong(0, false)');
+        playSong(0, false);
         
         setTimeout(() => {
             initParticles();
@@ -168,15 +192,19 @@ function initIntroScreen() {
     
     bgMusicToggle.addEventListener('click', () => {
         if (bgMusic.paused) {
-            bgMusic.play();
+            bgMusic.play().catch(error => {
+                console.error('Playback error:', error);
+            });
             playIcon.style.display = 'none';
             pauseIcon.style.display = 'block';
             bgMusicIndicator.style.display = 'flex';
+            updateDiscordPresence(true);
         } else {
             bgMusic.pause();
             playIcon.style.display = 'block';
             pauseIcon.style.display = 'none';
             bgMusicIndicator.style.display = 'none';
+            updateDiscordPresence(false);
         }
     });
     
@@ -191,7 +219,9 @@ function initIntroScreen() {
                 const song = playlist[currentSongIndex];
                 bgMusic.src = song.src;
                 bgMusic.volume = volumeSlider.value / 100;
-                bgMusic.play();
+                bgMusic.play().catch(error => {
+                    console.error('Playback error:', error);
+                });
                 updateSongUI(song);
                 playIcon.style.display = 'none';
                 pauseIcon.style.display = 'block';
@@ -203,7 +233,7 @@ function initIntroScreen() {
     });
     
     nextBtn.addEventListener('click', () => {
-        playSong(0, true);
+        playSong(currentSongIndex + 1, false);
     });
     
     bgProgressBar.addEventListener('click', seekTo);
@@ -225,9 +255,18 @@ function initIntroScreen() {
     
     bgMusic.addEventListener('timeupdate', updateProgress);
     bgMusic.addEventListener('loadedmetadata', updateProgress);
+
+    bgMusic.addEventListener('error', () => {
+        if (!bgMusic.src.includes('soundhelix.com')) {
+            bgMusic.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
+            bgMusic.play().catch(() => {
+                // playback blocked or fallback failed
+            });
+        }
+    });
     
     bgMusic.addEventListener('ended', () => {
-        playSong(0, true);
+        playSong(currentSongIndex + 1, false);
     });
     
     volumeSlider.addEventListener('input', (e) => {
@@ -373,7 +412,7 @@ async function initSpotifyNowPlaying() {
     
     async function fetchNowPlaying() {
         try {
-            const response = await fetch('https://generator.ryuu.lol/api/spotify/now-playing');
+            const response = await fetch('');
             const data = await response.json();
             
             if (data.playing && data.track) {
@@ -415,7 +454,7 @@ async function initTopTracks() {
     const skeletons = ['skeleton1', 'skeleton2', 'skeleton3', 'skeleton4', 'skeleton5'];
     
     try {
-        const response = await fetch('https://generator.ryuu.lol/api/spotify/top-tracks');
+        const response = await fetch('https://generator.ryuu.lol/api/spotify/top-track');
         const data = await response.json();
         
         if (data.tracks && data.tracks.length > 0) {
@@ -457,3 +496,14 @@ async function initTopTracks() {
         });
     }
 }
+
+function updateDiscordPresence(isPlaying) {
+    const statusText = document.getElementById('discordStatusText');
+    if (!statusText) return;
+
+    const currentTitle = document.getElementById('bgMusicTitle')?.textContent || 'Spotify';
+    statusText.textContent = isPlaying
+        ? `Đang xem YouTube + Game Activate + Spotify: ${currentTitle}`
+        : 'Đang xem YouTube + Game Activate + Spotify';
+}
+
